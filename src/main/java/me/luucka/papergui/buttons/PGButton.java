@@ -1,17 +1,11 @@
 package me.luucka.papergui.buttons;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.bukkit.inventory.ItemStack;
 
-public class PGButton {
+public final class PGButton {
 
-    @Getter
-    @Setter
     private PGButtonListener listener;
 
-    @Getter
-    @Setter
     private ItemStack icon;
 
     public PGButton(ItemStack icon) {
@@ -21,5 +15,21 @@ public class PGButton {
     public PGButton withListener(PGButtonListener listener) {
         this.listener = listener;
         return this;
+    }
+
+    public PGButtonListener getListener() {
+        return listener;
+    }
+
+    public void setListener(PGButtonListener listener) {
+        this.listener = listener;
+    }
+
+    public ItemStack getIcon() {
+        return icon;
+    }
+
+    public void setIcon(ItemStack icon) {
+        this.icon = icon;
     }
 }
