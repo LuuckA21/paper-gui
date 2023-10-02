@@ -9,7 +9,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.List;
 
-public class UtilityItem {
+public final class UtilityItem {
 
     private final Material material;
     private final ItemMeta meta;
@@ -25,7 +25,7 @@ public class UtilityItem {
         this.amount = amount <= 0 ? 1 : amount;
     }
 
-    public ItemStack toItemStack() {
+    public ItemStack build() {
         ItemStack item = new ItemStack(this.material, this.amount);
         item.setItemMeta(this.meta);
         return item;
