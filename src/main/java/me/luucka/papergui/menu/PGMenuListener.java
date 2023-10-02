@@ -1,6 +1,5 @@
 package me.luucka.papergui.menu;
 
-import lombok.RequiredArgsConstructor;
 import me.luucka.papergui.PaperGUI;
 import me.luucka.papergui.buttons.PGButton;
 import me.luucka.papergui.pagination.PGPaginationButtonBuilder;
@@ -11,11 +10,15 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-@RequiredArgsConstructor
 public class PGMenuListener implements Listener {
 
     private final JavaPlugin owner;
     private final PaperGUI paperGUI;
+
+    public PGMenuListener(JavaPlugin owner, PaperGUI paperGUI) {
+        this.owner = owner;
+        this.paperGUI = paperGUI;
+    }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
